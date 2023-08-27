@@ -24,7 +24,7 @@ body {
   );
   position: relative;
 }
-
+/* --Body Style-- */
 .container {
   width: 54rem;
   height: 68rem;
@@ -32,6 +32,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 5px 15px;
 }
 
 .watch-bg {
@@ -46,12 +47,19 @@ body {
   flex-direction: column;
 }
 
+.query {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* --Clock Style-- */
 .outer-circle {
   width: 23rem;
   height: 23rem;
   border-radius: 50%;
   background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 5px 15px;
 
   display: flex;
   justify-content: center;
@@ -74,11 +82,6 @@ body {
   align-items: center;
 }
 
-.laps {
-  height: 25rem;
-  overflow: auto;
-}
-
 .text {
   color: #fff;
   font-size: 2.3rem;
@@ -96,22 +99,24 @@ body {
   font-size: 2.3rem;
 }
 
+/* --Buttons Style-- */
 .button-wrapper {
   width: 25rem;
-  margin-top: 3rem;
+  margin: 3rem 0;
   display: flex;
   justify-content: space-between;
 }
 
 .button {
+  letter-spacing: 0.12px;
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
   border: 2px solid #fff;
-  background-image: radial-gradient(
+  background: radial-gradient(
     circle farthest-corner at 10% 20%,
     rgba(186, 190, 245, 1) 0%,
-    rgba(192, 192, 245, 1) 33.1%,
+    rgba(192, 192, 245, 1) 25.1%,
     rgba(218, 203, 246, 1) 90%
   );
   cursor: pointer;
@@ -121,6 +126,76 @@ body {
 }
 
 .button:hover {
-  transform: translateY(5px);
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 3px 10px;
+}
+
+/* --Laps Style-- */
+.laps {
+  list-style: none;
+  color: #fff;
+  width: 31rem;
+  height: 19rem;
+  overflow: auto;
+  position: relative;
+  padding: 0 0.8rem;
+  /* margin: 0 auto; */
+  /* margin: 0 1rem 1rem; */
+}
+
+.lap-item {
+  display: block;
+  width: 100%;
+  border: 1px solid #fff;
+  padding: 1rem;
+  border-radius: 5rem;
+  margin-bottom: 1rem;
+  /* margin: 0 1rem 1rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+
+  transition: all 0.3s;
+}
+.lap-item:hover {
+  box-shadow: rgba(255, 255, 255, 0.2) 0px -50px 36px -28px inset;
+  cursor: pointer;
+}
+.lap-number {
+  display: inline-block;
+  color: #fff;
+}
+
+.time-stamp {
+  display: inline-block;
+  /* margin-left: 2.5rem; */
+}
+.time-comparison {
+  display: inline-block;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.laps::-webkit-scrollbar {
+  width: 1rem;
+}
+.laps::-webkit-scrollbar-track {
+  background-color: #eee;
+}
+.laps::-webkit-scrollbar-thumb {
+  background: linear-gradient(rgb(161, 166, 241), rgb(199, 199, 247));
+  border-radius: 9px;
+}
+
+.lap-clear-btn {
+  font-size: 1.5rem;
+  display: block;
+  margin-top: 3rem;
+  width: 9.5rem;
+  padding: 1rem;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 5rem;
 }
