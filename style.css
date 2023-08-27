@@ -1,0 +1,126 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 1.6rem;
+  width: 100%;
+  height: 100vh;
+
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(186, 190, 245, 1) 0%,
+    rgba(192, 192, 245, 1) 33.1%,
+    rgba(218, 203, 246, 1) 90%
+  );
+  position: relative;
+}
+
+.container {
+  width: 54rem;
+  height: 68rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.watch-bg {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9px;
+  backdrop-filter: blur(40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.outer-circle {
+  width: 23rem;
+  height: 23rem;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-circle {
+  width: 21rem;
+  height: 21rem;
+  border-radius: 50%;
+
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(186, 190, 245, 1) 0%,
+    rgba(192, 192, 245, 1) 33.1%,
+    rgba(218, 203, 246, 1) 90%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.laps {
+  height: 25rem;
+  overflow: auto;
+}
+
+.text {
+  color: #fff;
+  font-size: 2.3rem;
+}
+
+.hour {
+  font-size: 4.3rem;
+}
+
+.minute {
+  font-size: 3.4rem;
+}
+
+.second {
+  font-size: 2.3rem;
+}
+
+.button-wrapper {
+  width: 25rem;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(186, 190, 245, 1) 0%,
+    rgba(192, 192, 245, 1) 33.1%,
+    rgba(218, 203, 246, 1) 90%
+  );
+  cursor: pointer;
+  color: #fff;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  transform: translateY(5px);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 10px;
+}
