@@ -17,22 +17,20 @@ body {
   width: 100%;
   height: 100vh;
 
-  background-image: radial-gradient(
-    circle farthest-corner at 10% 20%,
-    rgba(186, 190, 245, 1) 0%,
-    rgba(192, 192, 245, 1) 33.1%,
-    rgba(218, 203, 246, 1) 90%
-  );
+  background-color: #a9c9ff;
+  background-image: linear-gradient(180deg, #a9c9ff 0%, #ffbbec 100%);
+
   position: relative;
 }
 /* --Body Style-- */
 .container {
-  width: 54rem;
+  width: 68rem;
   height: 68rem;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 5px 15px;
 }
 
@@ -40,20 +38,24 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.15);
-  border-radius: 9px;
+  border-radius: 50%;
+  border: 0.5px solid #ddd;
   backdrop-filter: blur(40px);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
 }
 
-.query {
+.stopwatch-movement {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: all 0.2s;
 }
+
 /* --Clock Style-- */
 .outer-circle {
   width: 23rem;
@@ -61,42 +63,51 @@ body {
   border-radius: 50%;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 5px 15px;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .inner-circle {
-  width: 21rem;
-  height: 21rem;
+  width: 21.7rem;
+  height: 21.7rem;
   border-radius: 50%;
-
-  background-image: radial-gradient(
-    circle farthest-corner at 10% 20%,
-    rgba(186, 190, 245, 1) 0%,
-    rgba(192, 192, 245, 1) 33.1%,
-    rgba(218, 203, 246, 1) 90%
-  );
+  background-color: #a9c9ff;
+  background-image: linear-gradient(180deg, #a9c9ff 0%, #ffbbec 100%);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.animation-frame {
+  background: linear-gradient(
+    -45deg,
+    #ffadad,
+    #ffd6a5,
+    #caffbf,
+    #9bf6ff,
+    #a0c4ff,
+    #bdb2ff,
+    #ffc6ff,
+    #fffffc
+  );
+  background-size: 400% 400%;
+  animation: gradient 1.5s ease infinite;
+}
+
+@keyframes gradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 .text {
   color: #fff;
-  font-size: 2.3rem;
-}
-
-.hour {
-  font-size: 4.3rem;
-}
-
-.minute {
-  font-size: 3.4rem;
-}
-
-.second {
   font-size: 2.3rem;
 }
 
@@ -114,12 +125,7 @@ body {
   height: 5.2rem;
   border-radius: 50%;
   border: 2px solid #fff;
-  background: radial-gradient(
-    circle farthest-corner at 10% 20%,
-    rgba(186, 190, 245, 1) 0%,
-    rgba(192, 192, 245, 1) 25.1%,
-    rgba(218, 203, 246, 1) 90%
-  );
+  background: linear-gradient(180deg, #a9c9ff 0%, #ffbbec 100%);
   cursor: pointer;
   color: #fff;
   font-weight: 500;
@@ -127,13 +133,14 @@ body {
 }
 
 .button:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.02);
   transform: translateY(-2px);
   box-shadow: rgba(0, 0, 0, 0.12) 0px 3px 10px;
 }
 
 /* --Laps Style-- */
-.laps {
+
+.lap-list {
   list-style: none;
   color: #fff;
   width: 31rem;
@@ -141,8 +148,6 @@ body {
   overflow: auto;
   position: relative;
   padding: 0 0.8rem;
-  /* margin: 0 auto; */
-  /* margin: 0 1rem 1rem; */
 }
 
 .lap-item {
@@ -152,7 +157,8 @@ body {
   padding: 1rem;
   border-radius: 5rem;
   margin-bottom: 1rem;
-  /* margin: 0 1rem 1rem; */
+
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 3px 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -171,6 +177,7 @@ body {
 
 .time-stamp {
   display: inline-block;
+  color: #fff;
   /* margin-left: 2.5rem; */
 }
 .time-comparison {
@@ -179,14 +186,14 @@ body {
   text-align: center;
 }
 
-.laps::-webkit-scrollbar {
+.lap-list::-webkit-scrollbar {
   width: 1rem;
 }
-.laps::-webkit-scrollbar-track {
+.lap-list::-webkit-scrollbar-track {
   background-color: #eee;
 }
-.laps::-webkit-scrollbar-thumb {
-  background: linear-gradient(rgb(161, 166, 241), rgb(199, 199, 247));
+.lap-list::-webkit-scrollbar-thumb {
+  background: linear-gradient(#a9c9ff, #ffbbec);
   border-radius: 9px;
 }
 

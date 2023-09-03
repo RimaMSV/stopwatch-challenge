@@ -10,55 +10,21 @@
   <body>
     <div class="container">
       <div class="watch-bg">
-        <div class="query">
+        <div class="stopwatch-movement">
           <div class="watch">
             <div class="outer-circle">
               <div class="inner-circle watch">
-                <span class="text minute">0 :</span>
-                <span class="text second">&nbsp; 0 :</span>
-                <span class="text msec">&nbsp;0</span>
+                <span class="text stopwatch">00:00:00:000</span>
               </div>
             </div>
           </div>
           <div class="button-wrapper">
             <button class="button reset">Reset</button>
             <button class="button start">Start</button>
-            <button class="button stop">Stop</button>
+            <button class="button lap">Lap</button>
           </div>
 
-          <ul class="laps">
-            <li class="lap-item">
-              <span class="lap-number">#1</span>
-              <span class="time-stamp">01 : 25 : 02</span>
-              <span class="time-comparison">+02:27</span>
-            </li>
-            <li class="lap-item">
-              <span class="lap-number">#1</span>
-              <span class="time-stamp">01 : 25 : 02</span>
-              <span class="time-comparison">+02:27</span>
-            </li>
-            <li class="lap-item">
-              <span class="lap-number">#1</span>
-              <span class="time-stamp">01 : 25 : 02</span>
-              <span class="time-comparison">+02:27</span>
-            </li>
-            <li class="lap-item">
-              <span class="lap-number">#1</span>
-              <span class="time-stamp">01 : 25 : 02</span>
-              <span class="time-comparison">+02:27</span>
-            </li>
-            <li class="lap-item">
-              <span class="lap-number">#1</span>
-              <span class="time-stamp">01 : 25 : 02</span>
-              <span class="time-comparison">+02:27</span>
-            </li>
-            <li class="lap-item">
-              <span class="lap-number">#1</span>
-              <span class="time-stamp">01 : 25 : 02</span>
-              <span class="time-comparison">+02:27</span>
-            </li>
-          </ul>
-          <button class="button lap-clear-btn">Clear All</button>
+          <ul class="lap-list"></ul>
         </div>
       </div>
     </div>
